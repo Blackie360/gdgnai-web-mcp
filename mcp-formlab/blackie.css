@@ -804,6 +804,91 @@ code, pre { font-family: var(--font-mono); font-size: 0.9em; }
   font-size: 0.95rem;
 }
 
+/* ── MCP vs WebMCP table ─────────────────────────────── */
+
+.bl-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.bl-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+}
+
+.bl-compare-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.bl-compare-table th,
+.bl-compare-table td {
+  padding: 14px 18px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+.bl-compare-table thead th {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.bl-compare-table thead th:first-child {
+  width: 22%;
+}
+
+.bl-compare-table thead th:nth-child(2) {
+  color: var(--text-dim);
+}
+
+.bl-compare-table thead th:nth-child(3) {
+  color: var(--teal);
+}
+
+.bl-compare-table tbody tr:last-child th,
+.bl-compare-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.bl-compare-table tbody th[scope="row"] {
+  font-weight: 600;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.bl-compare-table tbody td {
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+
+.bl-compare-table tbody td:nth-child(3) {
+  color: var(--text);
+}
+
+.bl-compare-table code {
+  font-size: 0.88em;
+  color: var(--teal);
+}
+
+.bl-mcp-compare .bl-note {
+  margin-top: 20px;
+}
+
 /* ── Two APIs ────────────────────────────────────────── */
 
 .bl-api-grid {

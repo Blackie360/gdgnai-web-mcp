@@ -4,7 +4,7 @@ Hands-on demos for **Google I/O Extended Nairobi 2026** — showing how websites
 
 Built for the GDG Nairobi community around Gemini, Antigravity, Android 17, Firebase AI Studio, and agent-ready web development.
 
-![WebMCP flow: your site registers tools, modelContext exposes schemas, agents invoke with JSON](./docs/images/webmcp-flow.svg)
+![WebMCP flow: your site registers tools, modelContext exposes schemas, agents invoke with JSON](./docs/images/webmcp-flow.png)
 
 ## Live demos
 

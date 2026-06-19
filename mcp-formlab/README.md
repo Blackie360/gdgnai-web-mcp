@@ -20,6 +20,7 @@ Open http://localhost:8080
 ## What's on this page
 
 - Side-by-side **Without WebMCP vs With WebMCP** simulation (generic example, not event content)
+- **MCP vs WebMCP** comparison table — same tool contract, server vs browser runtime
 - Three-step **How it works** for the Declarative API
 - Links to live demos, attribute reference, safety notes, presenter script
 

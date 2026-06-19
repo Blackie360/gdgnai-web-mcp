@@ -17,6 +17,7 @@
       <nav class="bl-nav-links" aria-label="Main">
         <a href="#compare">Compare</a>
         <a href="#path">How it works</a>
+        <a href="#mcp-vs-webmcp">MCP vs WebMCP</a>
         <a href="#apis">Two APIs</a>
         <a href="#live-demos">Live demos</a>
         <a class="bl-nav-spec" href="https://github.com/webmachinelearning/webmcp" target="_blank" rel="noopener">Spec</a>
@@ -159,6 +160,68 @@
       </ol>
     </section>
 
+    <section id="mcp-vs-webmcp" class="bl-section bl-mcp-compare">
+      <header class="bl-section-head">
+        <h2>MCP vs WebMCP</h2>
+        <p>Same tool contract — name, description, JSON Schema, and an execute handler. Different runtime: server-side MCP servers vs tools registered by the page in the browser.</p>
+      </header>
+      <div class="bl-table-wrap">
+        <table class="bl-compare-table">
+          <caption class="bl-sr-only">Comparison of Model Context Protocol and WebMCP</caption>
+          <thead>
+            <tr>
+              <th scope="col">Aspect</th>
+              <th scope="col">MCP</th>
+              <th scope="col">WebMCP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Where it runs</th>
+              <td>Server or desktop — an MCP host connects to MCP servers</td>
+              <td>Browser tab — the open web page on your origin</td>
+            </tr>
+            <tr>
+              <th scope="row">Who provides tools</th>
+              <td>MCP servers (GitHub, Postgres, filesystem, custom APIs)</td>
+              <td>Your site via <code>document.modelContext</code></td>
+            </tr>
+            <tr>
+              <th scope="row">Transport</th>
+              <td>stdio, SSE, or streamable HTTP between host and server</td>
+              <td>In-page JavaScript API; browser bridges tools to the agent</td>
+            </tr>
+            <tr>
+              <th scope="row">Tool shape</th>
+              <td><code>name</code>, <code>description</code>, <code>inputSchema</code>, handler</td>
+              <td>Same — imperative <code>registerTool</code> or declarative form attributes</td>
+            </tr>
+            <tr>
+              <th scope="row">Agent access</th>
+              <td>Agent connects to configured MCP servers as a client</td>
+              <td>Agent reads tools from the page the user has open</td>
+            </tr>
+            <tr>
+              <th scope="row">Best for</th>
+              <td>Backend data, files, APIs, long-running or offline jobs</td>
+              <td>User-facing actions — forms, search, filters, navigation, booking</td>
+            </tr>
+            <tr>
+              <th scope="row">User context</th>
+              <td>Server-side credentials and permissions</td>
+              <td>User session, cookies, and visible UI state on that page</td>
+            </tr>
+            <tr>
+              <th scope="row">Setup</th>
+              <td>Install and run an MCP server; wire it in your agent host</td>
+              <td>Add <code>registerTool</code> or WebMCP form attributes to your site</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="bl-note">WebMCP brings MCP-style tools to the web platform. Many agent flows use both — MCP servers for backend access, WebMCP for what the user is doing in the browser right now.</p>
+    </section>
+
     <section id="apis" class="bl-section bl-apis">
       <header class="bl-section-head">
         <h2>Two ways to register</h2>
@@ -255,7 +318,8 @@
       <ol class="bl-script-list">
         <li><time>0:00</time> Hero — WebMCP: tools on <code>modelContext</code>, not DOM scraping.</li>
         <li><time>1:30</time> Play comparison — observation trace vs structured tool call.</li>
-        <li><time>4:00</time> Timeline + two APIs — imperative vs declarative registration.</li>
+        <li><time>4:00</time> MCP vs WebMCP table — same contract, server vs browser.</li>
+        <li><time>5:00</time> Timeline + two APIs — imperative vs declarative registration.</li>
         <li><time>6:00</time> DevTools on <a href="https://travel-webmcp-demo.vercel.app/" target="_blank" rel="noopener">Travel demo</a> (<code>registerTool</code> tools).</li>
         <li><time>8:00</time> <a href="https://symphonious-babka-2aa577.netlify.app/" target="_blank" rel="noopener">AgentReady Studio</a> declarative forms + safety.</li>
       </ol>
