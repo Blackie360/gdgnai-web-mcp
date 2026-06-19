@@ -2,6 +2,8 @@
 
 **Explainer only** — teaches the WebMCP Declarative API pattern (inspired by the [Chrome Labs explainer](https://googlechromelabs.github.io/webmcp-tools/demos/explainer/)).
 
+**Live:** [webmcp.cursorkenya.com](https://webmcp.cursorkenya.com)
+
 Hands-on declarative forms live on the companion demos:
 
 - [AgentReady Content Studio](https://symphonious-babka-2aa577.netlify.app/) — social posts & speaker intros

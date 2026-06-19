@@ -12,7 +12,7 @@ Built for the GDG Nairobi community around Gemini, Antigravity, Android 17, Fire
 |------|-----------|-----|
 | AgentReady Content Studio | Declarative (`toolname`, `toolparamdescription`) | [symphonious-babka-2aa577.netlify.app](https://symphonious-babka-2aa577.netlify.app/) |
 | GDG Event Guide | Imperative (`registerTool`) | [travel-webmcp-demo.vercel.app](https://travel-webmcp-demo.vercel.app/) |
-| Blackie Labs explainer | Teaching / overview | Run locally (see below) |
+| Blackie Labs explainer | Teaching / overview | [webmcp.cursorkenya.com](https://webmcp.cursorkenya.com) |
 
 <p align="center">
   <a href="https://symphonious-babka-2aa577.netlify.app/"><img src="./docs/images/agentready-content-studio.png" alt="AgentReady Content Studio — declarative WebMCP forms" width="45%"></a>
@@ -48,7 +48,9 @@ Both attach to `document.modelContext` / `navigator.modelContext` so agents rece
 
 Side-by-side **Without WebMCP vs With WebMCP** walkthrough, imperative vs declarative API overview, presenter script, and links to live demos. No build step.
 
-![Blackie Labs explainer — side-by-side WebMCP comparison hero](./docs/images/blackie-labs-explainer.png)
+**Live:** [webmcp.cursorkenya.com](https://webmcp.cursorkenya.com)
+
+[![Blackie Labs explainer — side-by-side WebMCP comparison hero](./docs/images/blackie-labs-explainer.png)](https://webmcp.cursorkenya.com)
 
 **The core idea** — register a tool, agent invokes with JSON:
 
