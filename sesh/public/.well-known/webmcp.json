@@ -1,0 +1,20 @@
+{
+  "name": "AgentReady Event Guide",
+  "description": "Read-only WebMCP-style demo for Google I/O Extended Nairobi 2026.",
+  "version": "1.0.0",
+  "readOnly": true,
+  "privacy": {
+    "collectsPersonalData": false,
+    "requiresAuthentication": false,
+    "notes": "All tools are backed by public static JSON and do not accept attendee identity, account, or contact data."
+  },
+  "resources": {
+    "event": "/webmcp/event.json",
+    "tools": "/webmcp/tools.json"
+  },
+  "sourceLinks": [
+    "https://gdg.community.dev/events/details/google-gdg-nairobi-presents-google-io-extended-nairobi-2026/",
+    "https://tech-ish.com/2026/05/29/google-i-o-extended-2026-returns-to-nairobi-on-june-20/",
+    "https://ke.linkedin.com/company/gdgnairobi"
+  ]
+}

@@ -1,0 +1,924 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AgentReady Content Studio — WebMCP Declarative API demo for Google I/O Extended Nairobi 2026. Full-day GDG Nairobi event on AI that acts: Gemini, Antigravity, WebMCP, Firebase, and Cloud.">
+  <title>AgentReady Content Studio | Google I/O Extended Nairobi 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="studio.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#">Agent<span>Ready</span></a>
+      <ul class="nav-links">
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#webmcp-attributes">WebMCP</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-content container">
+      <p class="hero-eyebrow">Live at Google I/O Extended Nairobi</p>
+      <h1>AgentReady Content Studio</h1>
+      <p class="subtitle">Google I/O Extended Nairobi 2026</p>
+
+      <p class="description">
+        Google I/O 2026 wrapped on 20 May in Mountain View — GDG Nairobi is bringing the local edition to you.
+        This full-day, hands-on event unpacks the shift from AI that assists to AI that acts: Gemini 3.5, Antigravity 2.0, Android 17, WebMCP, and Firebase AI Studio.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <strong>Date</strong>
+          Saturday, June 20, 2026
+        </div>
+        <div class="meta-item">
+          <strong>Time</strong>
+          8:00 AM – 5:00 PM (GMT+3)
+        </div>
+        <div class="meta-item">
+          <strong>Venue</strong>
+          Simba Corporation Aspire Center Westlands, Waiyaki Way, Nairobi 00100
+        </div>
+        <div class="meta-item">
+          <strong>Organizer</strong>
+          GDG Nairobi
+        </div>
+      </div>
+
+      <div class="note">
+        No personal data is collected. All tools are read-only.
+      </div>
+
+      <div class="badges">
+        <span class="badge badge--accent">AI</span>
+        <span class="badge">Gemini</span>
+        <span class="badge badge--green">Build with AI</span>
+        <span class="badge">Google Cloud</span>
+        <span class="badge">Google I/O Extended</span>
+        <span class="badge badge--accent">WebMCP</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- How It Works -->
+    <section id="how-it-works" class="reveal">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-lead">Each tool below is an ordinary HTML form annotated with WebMCP Declarative API attributes. Agents discover what the form does without scraping pixels or guessing labels.</p>
+      <ol class="step-rail">
+        <li>
+          <span class="step-num">1</span>
+          <p>Each form is a normal <code>&lt;form&gt;</code> element.</p>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <p>The form declares <code>toolname</code> and <code>tooldescription</code>.</p>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <p>Every field includes a <code>toolparamdescription</code> attribute.</p>
+        </li>
+        <li>
+          <span class="step-num">4</span>
+          <p>Agents receive a structured description of purpose and parameters.</p>
+        </li>
+        <li>
+          <span class="step-num">5</span>
+          <p>The user stays in control — the form only produces a local draft preview.</p>
+        </li>
+        <li>
+          <span class="step-num">6</span>
+          <p>Browsers without WebMCP simply render a normal form. Progressive enhancement.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Forms / Tools -->
+    <section id="tools" class="reveal">
+      <h2 class="section-title">Forms / Tools</h2>
+      <p class="section-lead">These two forms expose only public event information. They create local drafts in the browser. Nothing is sent anywhere.</p>
+
+      <div class="tools-grid">
+
+        <!-- Form 1: Social Post Generator -->
+        <article class="tool-card">
+          <div class="badges">
+            <span class="badge">HTML Form</span>
+            <span class="badge badge--accent">Declarative WebMCP</span>
+            <span class="badge badge--green">Read-only</span>
+          </div>
+          <h3>generate_event_post</h3>
+          <p class="tool-desc">Generates a social media draft using public Google I/O Extended Nairobi 2026 event information.</p>
+
+          <form id="form-generate_event_post" toolname="generate_event_post" tooldescription="Generates a social media draft using public Google I/O Extended Nairobi 2026 event information." novalidate>
+            <div>
+              <label for="f1-platform">Platform</label>
+              <select id="f1-platform" name="platform" toolparamdescription="Target social platform for the draft post.">
+                <option value="X">X</option>
+                <option value="LinkedIn" selected>LinkedIn</option>
+                <option value="WhatsApp">WhatsApp</option>
+              </select>
+            </div>
+            <div>
+              <label for="f1-tone">Tone</label>
+              <select id="f1-tone" name="tone" toolparamdescription="Desired tone for the generated post.">
+                <option value="professional" selected>professional</option>
+                <option value="excited">excited</option>
+                <option value="community-focused">community-focused</option>
+                <option value="technical">technical</option>
+              </select>
+            </div>
+            <div>
+              <label for="f1-audience">Audience</label>
+              <select id="f1-audience" name="audience" toolparamdescription="Primary audience for the post.">
+                <option value="developers" selected>developers</option>
+                <option value="students">students</option>
+                <option value="AI builders">AI builders</option>
+                <option value="community members">community members</option>
+              </select>
+            </div>
+            <div>
+              <label for="f1-focus">Focus</label>
+              <select id="f1-focus" name="focus" toolparamdescription="Primary topic or session focus to highlight.">
+                <option value="event overview">event overview</option>
+                <option value="WebMCP session" selected>WebMCP session</option>
+                <option value="Gemini">Gemini</option>
+                <option value="Firebase">Firebase</option>
+                <option value="Android">Android</option>
+                <option value="Flutter">Flutter</option>
+                <option value="Cloud">Cloud</option>
+                <option value="Antigravity">Antigravity</option>
+              </select>
+            </div>
+            <div>
+              <label for="f1-length">Length</label>
+              <select id="f1-length" name="length" toolparamdescription="Approximate length of the draft.">
+                <option value="short">short</option>
+                <option value="medium" selected>medium</option>
+              </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Generate Draft</button>
+            <button type="button" class="demo-btn" onclick="loadExampleForSocial()">Load demo values &amp; Generate</button>
+          </form>
+
+          <div class="preview" id="preview-generate_event_post" aria-live="polite"></div>
+        </article>
+
+        <!-- Form 2: Speaker Self-Intro / Bio Generator (for speakers + MCs) -->
+        <article class="tool-card">
+          <div class="badges">
+            <span class="badge">HTML Form</span>
+            <span class="badge badge--accent">Declarative WebMCP</span>
+            <span class="badge badge--green">Read-only</span>
+          </div>
+          <h3>create_speaker_intro</h3>
+          <p class="tool-desc">Generates ready-to-use self-introductions and bios that speakers can deliver themselves (first person), as well as traditional intros for MCs.</p>
+
+          <form id="form-create_speaker_intro" toolname="create_speaker_intro" tooldescription="Generates speaker-ready self-introductions (first person) and MC-style introductions using public speaker and session information from the event." novalidate>
+            <div>
+              <label for="f2-speaker">Speaker</label>
+              <select id="f2-speaker" name="speaker" toolparamdescription="Public speaker name or role.">
+                <option value="Felix Jumason">Felix Jumason — Software Engineer, Liquid Intelligent Technologies</option>
+                <option value="Shadrack Inusah">Shadrack Inusah — GDE for Cloud AI</option>
+                <option value="Auwal MS">Auwal MS — Lead, Developer Relations &amp; Integrations, Moniepoint | GDE for Firebase</option>
+                <option value="Jacquiline Gitau">Jacquiline Gitau — Community Manager, DotNexxt | Android Developer</option>
+                <option value="John Kimani">John Kimani — Developer Ecosystem Regional Lead, Sub-Saharan Africa</option>
+                <option value="Wayne Gakuo">Wayne Gakuo — Co-Founder &amp; Technical Solutions Architect, Unstacked Labs | GDE for Angular</option>
+                <option value="Wycliffe Maina">Wycliffe Maina — Gen AI &amp; Automations Engineer | GDE for Angular</option>
+                <option value="Gabriel Agbobli">Gabriel Agbobli — Research Scholar, Strathmore University | GDE for Google Cloud</option>
+                <option value="Samuel Macharia">Samuel Macharia — Cloud DevOps Engineer | GDE for Google Cloud</option>
+                <option value="Joseph Masaka">Joseph Masaka — Full-Stack Software Developer</option>
+                <option value="John M. Megwe">John M. Megwe — Data Scientist</option>
+                <option value="Hassan Bahati" selected>Hassan Bahati — Software Engineer</option>
+                <option value="Rhodah Mulera">Rhodah Mulera — Software Developer</option>
+                <option value="Rama Ochieng">Rama Ochieng — Solutions Engineer (Frontend, Devops, AI)</option>
+                <option value="Alex Nyambura">Alex Nyambura — Cloud DevOps Engineer</option>
+              </select>
+            </div>
+            <div>
+              <label for="f2-session">Session</label>
+              <select id="f2-session" name="session" class="linked-session" toolparamdescription="The session this speaker is delivering. Automatically set from the official agenda when you choose a speaker." aria-readonly="true" tabindex="-1">
+                <option value="Hybrid Inference with Firebase AI Logic" selected>Hybrid Inference with Firebase AI Logic</option>
+                <option value="Orchestrating Parallel Agents with Antigravity 2.0">Orchestrating Parallel Agents with Antigravity 2.0</option>
+                <option value="Smarter, Cheaper, Faster: Building Cost-Efficient Web Apps with Firebase AI Logic & Chrome Hybrid Inference">Smarter, Cheaper, Faster: Building Cost-Efficient Web Apps with Firebase AI Logic &amp; Chrome Hybrid Inference</option>
+                <option value="Agentic Workflows for Android Teams">Agentic Workflows for Android Teams</option>
+                <option value="Developer Keynote">Developer Keynote</option>
+                <option value="What's New in Angular v22">What's New in Angular v22</option>
+                <option value="Trust, But Verify: a Safety Valve for AI Agents">Trust, But Verify: a Safety Valve for AI Agents</option>
+                <option value="World Cup Analytics Agent with Managed Agents API">World Cup Analytics Agent with Managed Agents API</option>
+                <option value="Securing Autonomous AI Agents on GKE">Securing Autonomous AI Agents on GKE</option>
+                <option value="From Forms to Agents with Gemini & Angular">From Forms to Agents with Gemini &amp; Angular</option>
+                <option value="Ask the Planet: Geospatial Reasoning over Earth Engine">Ask the Planet: Geospatial Reasoning over Earth Engine</option>
+                <option value="Hybrid Inference with Firebase AI Logic">Hybrid Inference with Firebase AI Logic</option>
+                <option value="Build, Deploy, Scale: Creating AI Applications with Google Cloud">Build, Deploy, Scale: Creating AI Applications with Google Cloud</option>
+                <option value="Stay Guided, Reduce the Slop: Bridging the knowledge gap in modern Web Development">Stay Guided, Reduce the Slop: Bridging the knowledge gap in modern Web Development</option>
+                <option value="Cloud-Native Apps on GCP with Antigravity CLI">Cloud-Native Apps on GCP with Antigravity CLI</option>
+              </select>
+            </div>
+            <div>
+              <label for="f2-perspective">Use as</label>
+              <select id="f2-perspective" name="perspective" toolparamdescription="Who will use this text. 'Speaker (first person)' produces an intro the speaker can read or display themselves. 'MC / Host' produces a traditional third-person introduction.">
+                <option value="speaker" selected>Speaker (first person — for me to say / put on a slide)</option>
+                <option value="mc">MC / Host (third person — to introduce the speaker)</option>
+              </select>
+            </div>
+            <div>
+              <label for="f2-tone">Tone</label>
+              <select id="f2-tone" name="tone" toolparamdescription="Desired tone for the intro the speaker (or MC) will deliver.">
+                <option value="professional" selected>professional</option>
+                <option value="conversational">conversational</option>
+                <option value="confident">confident</option>
+                <option value="technical">technical</option>
+              </select>
+            </div>
+            <div>
+              <label for="f2-length">Length</label>
+              <select id="f2-length" name="length" toolparamdescription="Length of the speaker intro.">
+                <option value="short" selected>short</option>
+                <option value="medium">medium</option>
+              </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Create Intro</button>
+            <button type="button" class="demo-btn" onclick="loadExampleForSpeakerIntro()">Load speaker self-intro example</button>
+          </form>
+
+          <div class="preview" id="preview-create_speaker_intro" aria-live="polite"></div>
+          <p class="tool-hint">
+            Choosing a speaker automatically sets their session from the official agenda.<br>
+            "Speaker (first person)" produces text the speaker can say or put on a slide.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- WebMCP Attributes Viewer -->
+    <section id="webmcp-attributes" class="reveal">
+      <h2 class="section-title">WebMCP Attributes Viewer</h2>
+      <p class="section-lead">These four attributes turn a normal HTML form into something an agent can understand and invoke safely.</p>
+
+      <div class="attrs-layout">
+        <div class="attrs-grid">
+          <div class="attr-item">
+            <strong><code>toolname</code></strong>
+            <span class="attr-desc">Unique identifier for the tool. Placed on the <code>&lt;form&gt;</code>.</span>
+          </div>
+          <div class="attr-item">
+            <strong><code>tooldescription</code></strong>
+            <span class="attr-desc">Natural language purpose. Helps agents decide when to use the tool.</span>
+          </div>
+          <div class="attr-item">
+            <strong><code>toolparamdescription</code></strong>
+            <span class="attr-desc">Description for each field. Becomes the JSON Schema property description.</span>
+          </div>
+          <div class="attr-item">
+            <strong><code>name</code> + visible <code>&lt;label&gt;</code></strong>
+            <span class="attr-desc">Standard HTML requirements. The browser uses labels when <code>toolparamdescription</code> is absent.</span>
+          </div>
+        </div>
+
+        <div class="code-block-wrap">
+          <div class="code-label">Minimal annotated example</div>
+          <pre class="code-example"><code>&lt;form <span class="attr">toolname</span>="generate_event_post"
+      <span class="attr">tooldescription</span>="Generates a social media draft using public event information."&gt;
+  &lt;label for="platform"&gt;Platform&lt;/label&gt;
+  &lt;select <span class="attr">name</span>="platform" <span class="attr">toolparamdescription</span>="Target social platform."&gt;
+    &lt;option value="LinkedIn"&gt;LinkedIn&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;button type="submit"&gt;Generate&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+          <p class="code-note">Browsers without WebMCP simply render a normal form. Progressive enhancement.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety Notes -->
+    <section id="safety" class="reveal">
+      <h2 class="section-title">Safety Notes</h2>
+      <ul class="safety-grid">
+        <li>This demo does not collect personal data of any kind.</li>
+        <li>It does not post to social media or any external service.</li>
+        <li>It does not register users or require login.</li>
+        <li>It does not accept payments or perform any transactions.</li>
+        <li>It only exposes read-only, public event information.</li>
+        <li>All generation happens locally in your browser.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    Google I/O Extended Nairobi 2026 • GDG Nairobi • Agent-Ready Websites with WebMCP<br>
+    This page works by opening the file directly. No build step. No external dependencies.
+  </footer>
+
+  <script>
+    // Tiny vanilla JS for local preview generation only.
+    // No network, no storage of personal data, no side effects.
+
+    // === Accurate, dynamic data source ===
+    // All key event information is defined here (sourced from the official
+    // event page https://gdg.community.dev/events/details/google-gdg-nairobi-presents-google-io-extended-nairobi-2026/).
+    // Form options in HTML are kept in sync for standalone use; this object
+    // serves as the single source of truth for accuracy and future updates.
+    const EVENT_DATA = {
+      name: "Google I/O Extended Nairobi 2026",
+      organizer: "GDG Nairobi",
+      date: "Saturday, June 20, 2026",
+      time: "8:00 AM – 5:00 PM (GMT+3)",
+      venue: "Simba Corporation Aspire Center Westlands, Waiyaki Way, Nairobi 00100",
+      theme: "From AI that assists to AI that acts",
+      about: "Google I/O Extended Nairobi 2026 is our community's full-day, hands-on response to the biggest developer conference of the year. Key updates include Gemini 3.5, Antigravity 2.0, Android 17, WebMCP, and Firebase's AI Studio integration.",
+      audience: "Android developers, web developers, Flutter engineers, AI/ML practitioners, Firebase developers, cloud architects, and students. All experience levels are welcome.",
+      keyThemes: ["AI", "Gemini", "Build with AI", "Google Cloud", "Google I/O Extended", "WebMCP"],
+      sessions: [
+        "Developer Keynote",
+        "Orchestrating Parallel Agents with Antigravity 2.0",
+        "Smarter, Cheaper, Faster: Building Cost-Efficient Web Apps with Firebase AI Logic & Chrome Hybrid Inference",
+        "Agentic Workflows for Android Teams",
+        "Ask the Planet: Geospatial Reasoning over Earth Engine",
+        "Agent-Ready Websites with WebMCP",
+        "Hybrid Inference with Firebase AI Logic",
+        "World Cup Analytics Agent with Managed Agents API",
+        "Securing Autonomous AI Agents on GKE",
+        "What's New in Angular v22",
+        "Trust, But Verify: a Safety Valve for AI Agents",
+        "Build, Deploy, Scale: Creating AI Applications with Google Cloud",
+        "From Forms to Agents with Gemini & Angular",
+        "Stay Guided, Reduce the Slop: Bridging the knowledge gap in modern Web Development",
+        "Cloud-Native Apps on GCP with Antigravity CLI"
+      ],
+      agenda: [
+        { time: "8:00 AM", title: "Registration & Check-in" },
+        { time: "8:55 AM", title: "Welcome & Opening Keynote", speaker: "GDG Nairobi" },
+        { time: "9:15 AM", title: "Developer Keynote", speaker: "John Kimani" },
+        { time: "10:00 AM", title: "Orchestrating Parallel Agents with Antigravity 2.0", speaker: "Shadrack Inusah", room: "Room 1" },
+        { time: "10:00 AM", title: "Smarter, Cheaper, Faster: Building Cost-Efficient Web Apps with Firebase AI Logic & Chrome Hybrid Inference", speaker: "Auwal MS", room: "Room 2" },
+        { time: "10:00 AM", title: "Agentic Workflows for Android Teams", speaker: "Jacquiline Gitau", room: "Room 3" },
+        { time: "10:50 AM", title: "Ask the Planet: Geospatial Reasoning over Earth Engine", speaker: "John M. Megwe", room: "Room 1" },
+        { time: "10:50 AM", title: "Agent-Ready Websites with WebMCP", speaker: "Felix Jumason", room: "Room 2" },
+        { time: "10:50 AM", title: "Hybrid Inference with Firebase AI Logic", speaker: "Hassan Bahati", room: "Room 3" },
+        { time: "11:40 AM", title: "World Cup Analytics Agent with Managed Agents API", speaker: "Gabriel Agbobli", room: "Room 1" },
+        { time: "11:40 AM", title: "Securing Autonomous AI Agents on GKE", speaker: "Samuel Macharia", room: "Room 2" },
+        { time: "11:40 AM", title: "What's New in Angular v22", speaker: "Wayne Gakuo", room: "Room 3" },
+        { time: "12:30 PM", title: "Lunch + Group Photo" },
+        { time: "1:20 PM", title: "Trust, But Verify: a Safety Valve for AI Agents", speaker: "Wycliffe Maina", room: "Room 1" },
+        { time: "1:20 PM", title: "Build, Deploy, Scale: Creating AI Applications with Google Cloud", speaker: "Rhodah Mulera", room: "Room 2" },
+        { time: "1:20 PM", title: "From Forms to Agents with Gemini & Angular", speaker: "Joseph Masaka", room: "Room 3" },
+        { time: "2:10 PM", title: "Stay Guided, Reduce the Slop: Bridging the knowledge gap in modern Web Development", speaker: "Rama Ochieng", room: "Room 1" },
+        { time: "2:10 PM", title: "Cloud-Native Apps on GCP with Antigravity CLI", speaker: "Alex Nyambura", room: "Room 2" },
+        { time: "3:00 PM", title: "Community Segment: Feedback, Announcements", speaker: "GDG Nairobi" },
+        { time: "3:35 PM", title: "Closing Remarks, Networking & wind-down", speaker: "GDG Nairobi" }
+      ],
+      speakers: [
+        { value: "Felix Jumason", label: "Felix Jumason — Software Engineer, Liquid Intelligent Technologies" },
+        { value: "Shadrack Inusah", label: "Shadrack Inusah — GDE for Cloud AI" },
+        { value: "Auwal MS", label: "Auwal MS — Lead, Developer Relations & Integrations, Moniepoint | GDE for Firebase" },
+        { value: "Jacquiline Gitau", label: "Jacquiline Gitau — Community Manager, DotNexxt | Android Developer" },
+        { value: "John Kimani", label: "John Kimani — Developer Ecosystem Regional Lead, Sub-Saharan Africa" },
+        { value: "Wayne Gakuo", label: "Wayne Gakuo — Co-Founder & Technical Solutions Architect, Unstacked Labs | GDE for Angular" },
+        { value: "Wycliffe Maina", label: "Wycliffe Maina — Gen AI & Automations Engineer | GDE for Angular" },
+        { value: "Gabriel Agbobli", label: "Gabriel Agbobli — Research Scholar, Strathmore University | GDE for Google Cloud" },
+        { value: "Samuel Macharia", label: "Samuel Macharia — Cloud DevOps Engineer | GDE for Google Cloud" },
+        { value: "Joseph Masaka", label: "Joseph Masaka — Full-Stack Software Developer" },
+        { value: "John M. Megwe", label: "John M. Megwe — Data Scientist" },
+        { value: "Hassan Bahati", label: "Hassan Bahati — Software Engineer" },
+        { value: "Rhodah Mulera", label: "Rhodah Mulera — Software Developer" },
+        { value: "Rama Ochieng", label: "Rama Ochieng — Solutions Engineer (Frontend, Devops, AI)" },
+        { value: "Alex Nyambura", label: "Alex Nyambura — Cloud DevOps Engineer" }
+      ]
+    };
+
+    const DEFAULT_SPEAKER = 'Hassan Bahati';
+
+    // === Speaker → session mapping built from the official agenda ===
+    function buildSpeakerSessionMap() {
+      const map = {};
+      for (const item of EVENT_DATA.agenda) {
+        if (!item.speaker || item.speaker === 'GDG Nairobi' || !item.title) continue;
+        map[item.speaker] = item.title;
+      }
+      return map;
+    }
+
+    const speakerToSession = buildSpeakerSessionMap();
+
+    // Rebuild the session select so it only shows the session for the chosen speaker.
+    function updateSessionForSpeaker() {
+      const speakerSelect = document.getElementById('f2-speaker');
+      const sessionSelect = document.getElementById('f2-session');
+      if (!speakerSelect || !sessionSelect) return;
+
+      const speaker = speakerSelect.value;
+      const session = speakerToSession[speaker];
+
+      sessionSelect.innerHTML = '';
+      if (!session) {
+        const opt = document.createElement('option');
+        opt.value = '';
+        opt.textContent = 'No session mapped for this speaker';
+        sessionSelect.appendChild(opt);
+        return;
+      }
+
+      const opt = document.createElement('option');
+      opt.value = session;
+      opt.textContent = session;
+      opt.selected = true;
+      sessionSelect.appendChild(opt);
+      sessionSelect.classList.add('linked-session');
+    }
+
+    // Populate selects from the central EVENT_DATA so the demo stays accurate & dynamic.
+    // The HTML includes matching options as a fallback for environments where JS is disabled.
+    function populateSessionSelects() {
+      const sessionSelects = document.querySelectorAll('select[name="session"], select[name="session_one"], select[name="session_two"]');
+      if (!sessionSelects.length || !EVENT_DATA.sessions.length) return;
+
+      sessionSelects.forEach((select) => {
+        // Session for speaker intro is always derived from the selected speaker.
+        if (select.id === 'f2-session') return;
+
+        const previous = select.value || select.options[select.selectedIndex]?.value;
+        select.innerHTML = '';
+
+        EVENT_DATA.sessions.forEach((sess) => {
+          const opt = document.createElement('option');
+          opt.value = sess;
+          opt.textContent = sess;
+          if (sess === previous) {
+            opt.selected = true;
+          }
+          select.appendChild(opt);
+        });
+
+        if (previous && EVENT_DATA.sessions.includes(previous)) {
+          select.value = previous;
+        }
+      });
+    }
+
+    // Populate the speaker select dynamically from EVENT_DATA for accuracy.
+    function populateSpeakerSelect() {
+      const speakerSelect = document.querySelector('select[name="speaker"]');
+      if (!speakerSelect || !EVENT_DATA.speakers || !EVENT_DATA.speakers.length) return;
+
+      const previous = speakerSelect.value || DEFAULT_SPEAKER;
+      speakerSelect.innerHTML = '';
+
+      EVENT_DATA.speakers.forEach((sp) => {
+        const opt = document.createElement('option');
+        opt.value = sp.value;
+        opt.textContent = sp.label;
+        if (sp.value === previous) {
+          opt.selected = true;
+        }
+        speakerSelect.appendChild(opt);
+      });
+
+      speakerSelect.value = EVENT_DATA.speakers.some((s) => s.value === previous)
+        ? previous
+        : DEFAULT_SPEAKER;
+    }
+
+    // Keep session locked to the selected speaker (also catches agent-filled values).
+    function setupSpeakerSessionSync() {
+      const speakerSelect = document.getElementById('f2-speaker');
+      const sessionSelect = document.getElementById('f2-session');
+      if (!speakerSelect || !sessionSelect) return;
+
+      function syncSession() {
+        updateSessionForSpeaker();
+      }
+
+      speakerSelect.addEventListener('change', syncSession);
+      speakerSelect.addEventListener('input', syncSession);
+
+      const perspectiveSelect = document.getElementById('f2-perspective');
+      if (perspectiveSelect) {
+        perspectiveSelect.addEventListener('change', syncSession);
+      }
+
+      syncSession();
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function copyToClipboard(btn, text) {
+      if (!text) return;
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.classList.remove('copied');
+        }, 1600);
+      }).catch(() => {
+        // Fallback for older browsers / file://
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = orig; }, 1400);
+      });
+    }
+
+    // ===== Generators (pure functions returning {html, plain} ) =====
+
+    function generateEventPost(data) {
+      const { platform, tone, audience, focus, length } = data;
+      const eventName = EVENT_DATA.name;
+      const date = EVENT_DATA.date;
+      const venue = EVENT_DATA.venue;
+      const organizer = EVENT_DATA.organizer;
+
+      let text = '';
+      const isShort = length === 'short';
+
+      // Present tense — this demo runs on the actual day of the event
+      const opening = tone === 'excited' ? `🚀 I'm at ${eventName} today!` :
+                      tone === 'technical' ? `At ${eventName} — deep technical sessions happening now.` :
+                      tone === 'community-focused' ? `Connecting with the community at ${eventName} today.` :
+                      `Here at ${eventName} today.`;
+
+      const focusLine = focus === 'WebMCP session'
+        ? 'Felix Jumason is on stage with “Agent-Ready Websites with WebMCP” — the WebMCP Declarative API turns regular HTML forms into agent-readable tools.'
+        : focus === 'Gemini' ? 'Hands-on with Gemini 3.5 and building AI that acts.'
+        : focus === 'Firebase' ? 'Sessions on Firebase AI Logic, hybrid inference, and Chrome hybrid inference.'
+        : focus === 'Android' ? 'Agentic workflows for Android teams and Android 17 updates.'
+        : focus === 'Flutter' ? 'Cross-platform development with Flutter.'
+        : focus === 'Cloud' ? 'Cloud-native AI apps, GKE security, and the Managed Agents API on Google Cloud.'
+        : focus === 'Antigravity' ? 'Antigravity 2.0 and parallel agent orchestration across web and cloud.'
+        : EVENT_DATA.about;
+
+      // Present tense CTAs (event is happening today)
+      const call = platform === 'X'
+        ? `Join us today in Nairobi! #GoogleIO #WebMCP #Gemini @GDGNairobi`
+        : platform === 'WhatsApp'
+        ? `Here today at ${venue}. Come say hi!`
+        : `Here today — ${venue}, Nairobi.`;
+
+      text += `${opening}\n\n`;
+      text += `${focusLine}\n\n`;
+      // Present tense — demo runs on the day of the event
+      text += `Today: ${date} • ${organizer}\n`;
+      text += `At: ${venue}\n\n`;
+      if (!isShort) {
+        text += `Topics today: ${EVENT_DATA.keyThemes.join(', ')}.\n`;
+        text += `Open to ${EVENT_DATA.audience.split('.')[0].toLowerCase()}.\n\n`;
+      }
+      text += `${call}`;
+
+      const html = `<div class="out">${escapeHtml(text).replace(/\n/g, '<br>')}</div>`;
+      return { html, plain: text };
+    }
+
+    function createSpeakerIntro(data) {
+      const { speaker, tone, length, perspective = 'speaker' } = data;
+      const isShort = length === 'short';
+      const forSpeaker = perspective === 'speaker';
+
+      // Session always comes from the official speaker → session mapping.
+      const session = speakerToSession[speaker] || data.session;
+
+      // Accurate speaker information from the official event agenda.
+      const knownSpeakers = {
+        "Felix Jumason": {
+          bio: "Software Engineer at Liquid Intelligent Technologies",
+          focus: "how ordinary websites can become agent-ready using the WebMCP Declarative API",
+          firstPerson: "I'm a Software Engineer at Liquid Intelligent Technologies"
+        },
+        "Shadrack Inusah": {
+          bio: "Google Developer Expert (GDE) for Cloud AI",
+          focus: "orchestrating parallel agents with Antigravity 2.0",
+          firstPerson: "I'm a Google Developer Expert for Cloud AI"
+        },
+        "Auwal MS": {
+          bio: "GDE for Firebase and Lead, Developer Relations & Integrations at Moniepoint",
+          focus: "building cost-efficient web apps with Firebase AI Logic and Chrome hybrid inference",
+          firstPerson: "I'm a GDE for Firebase and lead developer relations at Moniepoint"
+        },
+        "Jacquiline Gitau": {
+          bio: "Community Manager at DotNexxt and an Android Developer",
+          focus: "agentic workflows for Android teams",
+          firstPerson: "I'm Community Manager at DotNexxt and an Android developer"
+        },
+        "John Kimani": {
+          bio: "Developer Ecosystem Regional Lead for Sub-Saharan Africa",
+          focus: "the developer keynote and the future of building with Google technologies",
+          firstPerson: "I lead the Developer Ecosystem for Sub-Saharan Africa"
+        },
+        "Wayne Gakuo": {
+          bio: "GDE for Angular and Co-Founder & Technical Solutions Architect at Unstacked Labs",
+          focus: "what's new in Angular v22",
+          firstPerson: "I'm a GDE for Angular and co-founder & technical solutions architect at Unstacked Labs"
+        },
+        "Wycliffe Maina": {
+          bio: "Gen AI & Automations Engineer and GDE for Angular",
+          focus: "trust and safety mechanisms as a safety valve for AI agents",
+          firstPerson: "I'm a Gen AI and automations engineer and GDE for Angular"
+        },
+        "Gabriel Agbobli": {
+          bio: "Research Scholar (BRAINS) at Strathmore University and GDE for Google Cloud",
+          focus: "building a World Cup analytics agent with the Managed Agents API",
+          firstPerson: "I'm a research scholar at Strathmore University and a GDE for Google Cloud"
+        },
+        "Samuel Macharia": {
+          bio: "Cloud DevOps Engineer and GDE for Google Cloud",
+          focus: "securing autonomous AI agents on GKE",
+          firstPerson: "I'm a cloud DevOps engineer and GDE for Google Cloud"
+        },
+        "Joseph Masaka": {
+          bio: "Full-Stack Software Developer",
+          focus: "going from forms to agents with Gemini and Angular",
+          firstPerson: "I'm a full-stack software developer"
+        },
+        "John M. Megwe": {
+          bio: "Data Scientist",
+          focus: "geospatial reasoning over Earth Engine",
+          firstPerson: "I'm a data scientist"
+        },
+        "Hassan Bahati": {
+          bio: "Software Engineer",
+          focus: "hybrid inference with Firebase AI Logic",
+          firstPerson: "I'm a software engineer"
+        },
+        "Rhodah Mulera": {
+          bio: "Software Developer",
+          focus: "building, deploying, and scaling AI applications with Google Cloud",
+          firstPerson: "I'm a software developer"
+        },
+        "Rama Ochieng": {
+          bio: "Solutions Engineer specializing in Frontend, DevOps, and AI",
+          focus: "bridging the knowledge gap in modern web development",
+          firstPerson: "I'm a solutions engineer working across frontend, DevOps, and AI"
+        },
+        "Alex Nyambura": {
+          bio: "Cloud DevOps Engineer",
+          focus: "building cloud-native apps on GCP with the Antigravity CLI",
+          firstPerson: "I'm a cloud DevOps engineer"
+        }
+      };
+
+      const info = knownSpeakers[speaker] || {
+        bio: `${speaker} is a speaker at the event`,
+        focus: session ? session.toLowerCase() : "their topic",
+        firstPerson: `I'm ${speaker}`
+      };
+
+      let text = '';
+
+      if (forSpeaker) {
+        // First-person version the speaker can actually use
+        const opening = tone === 'confident' ? "Hello everyone, I'm" :
+                        tone === 'technical' ? "Hi, I'm" :
+                        tone === 'conversational' ? "Hey, I'm" : "Hi, I'm";
+
+        text = `${opening} ${speaker}. ${info.firstPerson}.`;
+
+        if (session) {
+          // Present tense — we're on the day of the event
+          const sessionLine = isShort
+            ? `Today I'm talking about “${session}”.`
+            : `In this session I'm walking you through ${info.focus}.`;
+          text += ` ${sessionLine}`;
+        }
+
+        if (!isShort) {
+          text += ` You walk away with practical patterns you can apply right away.`;
+        }
+
+        // Present-tense close (on the day)
+        if (tone === 'professional') text += ` Thanks for being here.`;
+        else if (tone === 'confident') text += ` Let's go.`;
+        else text += ` Excited to share this with you today.`;
+
+      } else {
+        // Traditional MC / host style (third person)
+        const warm = tone === 'conversational' ? 'We’re excited to have' :
+                     tone === 'confident' ? 'Please welcome' :
+                     tone === 'technical' ? 'Joining us is' : 'Please welcome';
+
+        text = `${warm} ${speaker}. ${info.bio}.`;
+
+        if (session) {
+          text += ` Their session, “${session}”, covers ${info.focus}.`;
+        }
+
+        if (!isShort) {
+          text += ` Expect practical takeaways for developers working with Google’s AI and web tooling.`;
+        }
+
+        // Present / live feel for MC intros on the day
+        text += tone === 'professional' ? ' Join us for an insightful session.' : ' Join us.';
+      }
+
+      return { html: `<div class="out">${escapeHtml(text)}</div>`, plain: text };
+    }
+
+    // Map tool names to generators (only the two active forms)
+    const generators = {
+      'generate_event_post': generateEventPost,
+      'create_speaker_intro': createSpeakerIntro
+    };
+
+    function renderPreview(previewEl, result) {
+      previewEl.innerHTML = `
+        <div class="preview-header">
+          <span class="preview-label">Local draft preview</span>
+          <button type="button" class="copy-btn" aria-label="Copy draft to clipboard">Copy</button>
+        </div>
+        ${result.html}
+      `;
+      const copyBtn = previewEl.querySelector('.copy-btn');
+      copyBtn.addEventListener('click', () => copyToClipboard(copyBtn, result.plain));
+    }
+
+    function handleFormSubmit(e) {
+      const agentInvoked = Boolean(e.agentInvoked);
+      const hasRespondWith = typeof e.respondWith === 'function';
+
+      e.preventDefault();
+      const form = e.currentTarget;
+      const toolName = form.getAttribute('toolname');
+      const previewId = 'preview-' + toolName;
+      const previewEl = document.getElementById(previewId);
+      if (!previewEl) {
+        if (agentInvoked && hasRespondWith) {
+          e.respondWith({ error: `Preview element not found: ${previewId}` });
+        }
+        return;
+      }
+
+      const formData = Object.fromEntries(new FormData(form).entries());
+
+      if (toolName === 'create_speaker_intro') {
+        updateSessionForSpeaker();
+        formData.session = speakerToSession[formData.speaker] || formData.session;
+      }
+
+      const gen = generators[toolName];
+      if (!gen) {
+        previewEl.innerHTML = '<div class="out">No generator implemented for this tool.</div>';
+        if (agentInvoked && hasRespondWith) {
+          e.respondWith({ error: `No generator implemented for tool: ${toolName}` });
+        }
+        return;
+      }
+
+      const result = gen(formData);
+      renderPreview(previewEl, result);
+
+      if (agentInvoked && hasRespondWith) {
+        e.respondWith(result.plain);
+      }
+
+      // Gentle visual cue
+      previewEl.classList.add('preview-flash');
+      setTimeout(() => {
+        previewEl.classList.remove('preview-flash');
+      }, 700);
+    }
+
+    // Attach listeners to all declarative forms
+    function attachFormListeners() {
+      document.querySelectorAll('form[toolname]').forEach(form => {
+        form.addEventListener('submit', handleFormSubmit);
+      });
+    }
+
+    // Demo helper for Form 1 (Social Post) — loads good stage values then generates
+    function loadExampleForSocial() {
+      const form = document.getElementById('form-generate_event_post');
+      if (!form) return;
+
+      form.platform.value = 'LinkedIn';
+      form.tone.value = 'professional';
+      form.audience.value = 'developers';
+      form.focus.value = 'WebMCP session';
+      form.length.value = 'medium';
+
+      // Trigger the same flow as submit
+      const toolName = form.getAttribute('toolname');
+      const previewEl = document.getElementById('preview-' + toolName);
+      if (!previewEl) return;
+
+      const formData = Object.fromEntries(new FormData(form).entries());
+      const result = generators[toolName](formData);
+      renderPreview(previewEl, result);
+
+      // Scroll the preview into view for stage visibility
+      previewEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Stage helper: quickly loads good defaults for a speaker self-introduction
+    function loadExampleForSpeakerIntro() {
+      const form = document.getElementById('form-create_speaker_intro');
+      if (!form) return;
+
+      form.speaker.value = 'Felix Jumason';
+      updateSessionForSpeaker();
+      form.perspective.value = 'speaker';   // Important: first-person for the speaker
+      form.tone.value = 'conversational';
+      form.length.value = 'short';
+
+      const toolName = form.getAttribute('toolname');
+      const previewEl = document.getElementById('preview-' + toolName);
+      if (!previewEl) return;
+
+      const formData = Object.fromEntries(new FormData(form).entries());
+      const result = generators[toolName](formData);
+      renderPreview(previewEl, result);
+
+      previewEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Scroll reveal for sections
+    function setupScrollReveal() {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const sections = document.querySelectorAll('section.reveal');
+      if (prefersReduced) {
+        sections.forEach((el) => el.classList.add('is-visible'));
+        return;
+      }
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      );
+      sections.forEach((el) => observer.observe(el));
+    }
+
+    // Nav background on scroll
+    function setupNavScroll() {
+      const nav = document.getElementById('siteNav');
+      if (!nav) return;
+      function onScroll() {
+        nav.classList.toggle('scrolled', window.scrollY > 40);
+      }
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    // Boot
+    function init() {
+      // Enable agent auto-submit on declarative tool forms (required for WebMCP executeTool)
+      document.querySelectorAll('form[toolname]').forEach((form) => {
+        form.setAttribute('toolautosubmit', 'true');
+      });
+
+      // Populate dynamic selects from the accurate central data (single source of truth)
+      populateSessionSelects();
+      populateSpeakerSelect();
+
+      // Keep speaker + session in sync for accuracy
+      setupSpeakerSessionSync();
+
+      attachFormListeners();
+
+      setupScrollReveal();
+      setupNavScroll();
+
+      // Optional: pre-warm one preview with sensible defaults so the page feels alive when opened
+      // (still requires explicit user action for real demo, but nice for exploration)
+      // We intentionally do NOT auto-generate on load per requirements.
+      // The “Load demo values & Generate” button exists for the stage script.
+
+      // Make sure all previews are empty on fresh load (they already are)
+      console.log('%c[AgentReady] Demo ready. Data-driven from EVENT_DATA (accurate to official event page). All generation is local. No external calls.', 'color:#ff6b35');
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blackie Labs — WebMCP explainer. Give agents structured tools instead of DOM scraping. Imperative and Declarative APIs.">
+  <title>Blackie Labs · Agent-Ready Websites with WebMCP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="blackie.css" rel="stylesheet">
+</head>
+<body>
+  <header class="bl-nav" id="blNav">
+    <div class="bl-nav-inner">
+      <a class="bl-logo" href="#top">Blackie<span>Labs</span></a>
+      <nav class="bl-nav-links" aria-label="Main">
+        <a href="#compare">Compare</a>
+        <a href="#path">How it works</a>
+        <a href="#apis">Two APIs</a>
+        <a href="#live-demos">Live demos</a>
+        <a class="bl-nav-spec" href="https://github.com/webmachinelearning/webmcp" target="_blank" rel="noopener">Spec</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="bl-hero">
+      <div class="bl-hero-bg" aria-hidden="true"></div>
+      <div class="bl-hero-grid">
+        <div class="bl-hero-copy">
+          <p class="bl-kicker">Google I/O Extended Nairobi 2026 · Agent-Ready Websites with WebMCP</p>
+          <h1>Give agents <span class="bl-accent">tools</span>, not DOM scraping.</h1>
+          <p class="bl-lede">
+            Today, agents parse HTML, the accessibility tree, and screenshots — brittle, slow, and easy to get wrong.
+            <strong>WebMCP</strong> lets your site declare what it can do as structured tools on
+            <code>document.modelContext</code>. Agents see a contract, supply JSON arguments, and your code runs —
+            with the user still in control.
+          </p>
+          <div class="bl-hero-actions">
+            <a class="bl-btn bl-btn-primary" href="#compare">Watch the comparison</a>
+            <a class="bl-btn bl-btn-ghost" href="#live-demos">Open live demos</a>
+          </div>
+        </div>
+        <aside class="bl-hero-visual" aria-label="WebMCP tool registration to agent invocation">
+          <div class="bl-morph">
+            <div class="bl-morph-pane bl-morph-pane--html">
+              <span class="bl-morph-label">Your site registers</span>
+              <pre class="bl-morph-code"><code>document.modelContext
+  .<b>registerTool</b>({
+  name: "search_sessions",
+  description: "…",
+  inputSchema: { … },
+  execute(input) { … }
+});</code></pre>
+            </div>
+            <div class="bl-morph-arrow" aria-hidden="true">→</div>
+            <div class="bl-morph-pane bl-morph-pane--json">
+              <span class="bl-morph-label">Agent invokes</span>
+              <pre class="bl-morph-code"><code>{
+  "tool": "search_sessions",
+  "arguments": {
+    "query": "WebMCP",
+    "room": "Main Hall"
+  }
+}</code></pre>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="compare" class="bl-section bl-compare">
+      <header class="bl-section-head">
+        <h2>Without WebMCP vs with WebMCP</h2>
+        <p>Same page action, two agent strategies. Play the simulation — scraping fumbles through the UI; WebMCP calls one registered tool with structured arguments.</p>
+      </header>
+
+      <div class="bl-playbar">
+        <button type="button" class="bl-btn bl-btn-play" id="run-sim">
+          <span class="bl-play-icon" aria-hidden="true">▶</span>
+          <span class="run-label">Play: “Draft a short professional product update”</span>
+        </button>
+        <button type="button" class="bl-btn bl-btn-ghost" id="reset-sim">Reset</button>
+      </div>
+
+      <div class="bl-compare-grid">
+        <article class="bl-panel bl-panel--scrape">
+          <header class="bl-panel-head">
+            <span class="bl-chip bl-chip--warn">DOM scraping</span>
+            <h3>Guesswork</h3>
+            <p>Inferring intent from labels, classes, and layout.</p>
+          </header>
+          <div class="bl-stage">
+            <div class="annotations" id="annotations" aria-hidden="true"></div>
+            <div class="scan-cursor" id="scan-cursor" aria-hidden="true"></div>
+            <div id="widget-without"></div>
+          </div>
+          <div class="bl-log" id="log-without">
+            <span class="bl-log-title">Observation trace</span>
+            <ul class="log-list"></ul>
+          </div>
+        </article>
+
+        <article class="bl-panel bl-panel--tools">
+          <header class="bl-panel-head">
+            <span class="bl-chip bl-chip--ok">WebMCP tool call</span>
+            <h3>Structured tool call</h3>
+            <p>One registered tool — name, schema, arguments. Same contract as imperative <code>registerTool</code>.</p>
+          </header>
+          <div class="bl-stage">
+            <div id="widget-with"></div>
+          </div>
+          <div class="bl-tools" id="tools-panel">
+            <div class="bl-tools-head">
+              <span>Tool registry</span>
+              <span class="bl-tools-count" id="tools-count">0</span>
+            </div>
+            <ul class="tools-list" id="tools-list"></ul>
+            <div class="bl-tool-call" id="tool-call" hidden>
+              <span class="bl-log-title">Last invocation</span>
+              <pre class="bl-tool-call-code" id="tool-call-code"></pre>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="bl-status" id="insert-status"></p>
+      <p class="bl-note">Simulation only on this page. Live sites with real <code>registerTool</code> and declarative forms are linked below.</p>
+    </section>
+
+    <section id="path" class="bl-section bl-path">
+      <header class="bl-section-head">
+        <h2>How WebMCP works</h2>
+        <p>Three steps — whether you register tools in JavaScript or annotate HTML forms.</p>
+      </header>
+      <ol class="bl-timeline">
+        <li class="bl-timeline-item">
+          <span class="bl-timeline-num">1</span>
+          <div>
+            <h3>Your site registers tools</h3>
+            <p>Declare actions an agent can take: name, description, JSON Schema, and an <code>execute</code> handler — the same shape as server-side MCP tools. Use the <strong>Imperative API</strong> (<code>registerTool</code>) or the <strong>Declarative API</strong> (form attributes).</p>
+          </div>
+        </li>
+        <li class="bl-timeline-item">
+          <span class="bl-timeline-num">2</span>
+          <div>
+            <h3>The browser exposes them</h3>
+            <p>A WebMCP-aware browser or extension collects tools from <code>document.modelContext</code> and presents them to the user's agent — scoped to your origin, alongside the page URL and title.</p>
+          </div>
+        </li>
+        <li class="bl-timeline-item">
+          <span class="bl-timeline-num">3</span>
+          <div>
+            <h3>Agents call instead of guess</h3>
+            <p>No more “find the right button.” The agent picks a tool, supplies structured arguments, and your handler runs — navigation, search, booking, content generation, or read-only lookups.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="apis" class="bl-section bl-apis">
+      <header class="bl-section-head">
+        <h2>Two ways to register</h2>
+        <p>Pick the API that fits your stack. Many sites use both — imperative tools for app logic, declarative forms for simple inputs.</p>
+      </header>
+      <div class="bl-api-grid">
+        <article class="bl-api-card">
+          <span class="bl-chip bl-chip--ok">Imperative API</span>
+          <h3>JavaScript <code>registerTool</code></h3>
+          <p>Search, filters, navigation, state — anything your app already does in code. Full control over schema and execution.</p>
+          <pre class="bl-code-block"><code>document.modelContext.registerTool({
+  name: "sessions_search",
+  description: "Search public session listings.",
+  inputSchema: {
+    type: "object",
+    properties: {
+      query: { type: "string" },
+      room:  { type: "string" }
+    }
+  },
+  annotations: { readOnlyHint: true },
+  execute({ query, room }) {
+    return { sessions: filterSessions(query, room) };
+  }
+});</code></pre>
+        </article>
+        <article class="bl-api-card">
+          <span class="bl-chip bl-chip--accent">Declarative API</span>
+          <h3>HTML form attributes</h3>
+          <p>Standard <code>&lt;form&gt;</code> plus WebMCP attributes — no JS wiring. The browser derives the tool schema from fields.</p>
+          <pre class="bl-code-block"><code>&lt;form toolname="draft_content"
+      tooldescription="Create a content draft"
+      toolautosubmit&gt;
+  &lt;select name="topic"
+    toolparamdescription="Subject"&gt;…&lt;/select&gt;
+  &lt;select name="tone"
+    toolparamdescription="Voice"&gt;…&lt;/select&gt;
+  &lt;button type="submit"&gt;Generate&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+        </article>
+      </div>
+    </section>
+
+    <section id="live-demos" class="bl-section bl-demos">
+      <header class="bl-section-head">
+        <h2>Where to build &amp; test</h2>
+        <p>Blackie Labs explains WebMCP. These companion sites ship both imperative and declarative tools — fork them for your own event or product.</p>
+      </header>
+      <div class="bl-demo-grid">
+        <a class="bl-demo-card" href="https://symphonious-babka-2aa577.netlify.app/" target="_blank" rel="noopener">
+          <span class="bl-demo-tag">Declarative API</span>
+          <h3>AgentReady Content Studio</h3>
+          <p>HTML forms with <code>toolname</code> and <code>toolparamdescription</code> — social posts, speaker intros, no extra JS.</p>
+          <span class="bl-demo-go">Open studio ↗</span>
+        </a>
+        <a class="bl-demo-card" href="https://travel-webmcp-demo.vercel.app/" target="_blank" rel="noopener">
+          <span class="bl-demo-tag">Imperative API</span>
+          <h3>I/O Extended Nairobi Travel</h3>
+          <p><code>registerTool</code> for session search, speaker lookup, schedule building, and navigation — full agent-ready event site.</p>
+          <span class="bl-demo-go">Open travel demo ↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="reference" class="bl-section bl-attrs">
+      <header class="bl-section-head">
+        <h2>API surface at a glance</h2>
+        <p>The platform hook is <code>document.modelContext</code> (also exposed on <code>navigator.modelContext</code> in some builds).</p>
+      </header>
+      <dl class="bl-attr-list">
+        <div><dt><code>registerTool(def, opts?)</code></dt><dd>Imperative — register a tool with schema and <code>execute</code>. Pass <code>{ signal }</code> to unregister on teardown.</dd></div>
+        <div><dt><code>getTools()</code></dt><dd>Inspect what the page exposes — use DevTools WebMCP panel or extensions during development.</dd></div>
+        <div><dt><code>toolname</code> · <code>tooldescription</code></dt><dd>Declarative — on <code>&lt;form&gt;</code>. Names the tool and tells agents when to use it.</dd></div>
+        <div><dt><code>toolparamdescription</code> · <code>toolautosubmit</code></dt><dd>Declarative — per-field schema hints; optional auto-invoke without a submit click.</dd></div>
+      </dl>
+    </section>
+
+    <section id="safety" class="bl-section bl-safety">
+      <header class="bl-section-head">
+        <h2>Ship responsibly</h2>
+      </header>
+      <ul class="bl-safety-list">
+        <li>Register only tools you intend agents to invoke — treat the registry like a public API.</li>
+        <li>Use <code>readOnlyHint</code> and avoid PII in tool inputs on public pages.</li>
+        <li>Validate schemas and tool output in Chrome DevTools WebMCP inspector.</li>
+        <li>Progressive enhancement — pages work normally when WebMCP is unavailable.</li>
+      </ul>
+    </section>
+
+    <section id="demo-script" class="bl-section bl-script">
+      <header class="bl-section-head">
+        <h2>Session script · ~10 min</h2>
+      </header>
+      <ol class="bl-script-list">
+        <li><time>0:00</time> Hero — WebMCP: tools on <code>modelContext</code>, not DOM scraping.</li>
+        <li><time>1:30</time> Play comparison — observation trace vs structured tool call.</li>
+        <li><time>4:00</time> Timeline + two APIs — imperative vs declarative registration.</li>
+        <li><time>6:00</time> DevTools on <a href="https://travel-webmcp-demo.vercel.app/" target="_blank" rel="noopener">Travel demo</a> (<code>registerTool</code> tools).</li>
+        <li><time>8:00</time> <a href="https://symphonious-babka-2aa577.netlify.app/" target="_blank" rel="noopener">AgentReady Studio</a> declarative forms + safety.</li>
+      </ol>
+    </section>
+
+    <section class="bl-section bl-outro">
+      <h2>Explain WebMCP here. Ship tools on the demos.</h2>
+      <p>Inspired by the <a href="https://googlechromelabs.github.io/webmcp-tools/demos/explainer/" target="_blank" rel="noopener">Chrome Labs explainer</a> — tailored for GDG Nairobi with both imperative and declarative examples.</p>
+      <div class="bl-outro-links">
+        <a class="bl-btn bl-btn-primary" href="https://symphonious-babka-2aa577.netlify.app/" target="_blank" rel="noopener">AgentReady Studio</a>
+        <a class="bl-btn bl-btn-ghost" href="https://travel-webmcp-demo.vercel.app/" target="_blank" rel="noopener">Travel demo</a>
+        <a class="bl-btn bl-btn-ghost" href="https://github.com/webmachinelearning/webmcp" target="_blank" rel="noopener">WebMCP spec</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bl-foot">
+    <span>Blackie Labs · GDG Nairobi · June 2026</span>
+    <span>Vanilla HTML, CSS, JS — no build step.</span>
+  </footer>
+
+  <script src="formlab.js"></script>
+</body>
+</html>
