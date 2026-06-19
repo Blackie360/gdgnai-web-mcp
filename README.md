@@ -26,7 +26,6 @@ gdgnai/
 ├── mcp-formlab/              # Blackie Labs — WebMCP explainer (vanilla HTML)
 ├── webmcp_declarative/       # AgentReady Content Studio — declarative forms
 ├── gdgspeakersearch web mcp/ # GDG event site — imperative agent tools (React)
-├── sesh/                     # AgentReady Event Guide — static WebMCP contract (JSON)
 └── docs/images/              # README screenshots and diagrams
 ```
 
@@ -195,72 +194,6 @@ npm run dev
 ```
 
 → [gdgspeakersearch web mcp/README.md](./gdgspeakersearch%20web%20mcp/README.md)
-
----
-
-### sesh — AgentReady Event Guide (read-only)
-
-Static, privacy-first event guide. Exposes a machine-readable contract under `/.well-known/webmcp.json` and `/webmcp/*.json` — no forms, sign-in, or personal data collection.
-
-![AgentReady Event Guide — read-only static event data for agents](./docs/images/sesh-event-guide.png)
-
-**Agent contract** (`sesh/public/.well-known/webmcp.json`):
-
-```json
-{
-  "name": "AgentReady Event Guide",
-  "description": "Read-only WebMCP-style demo for Google I/O Extended Nairobi 2026.",
-  "version": "1.0.0",
-  "readOnly": true,
-  "privacy": {
-    "collectsPersonalData": false,
-    "requiresAuthentication": false,
-    "notes": "All tools are backed by public static JSON and do not accept attendee identity, account, or contact data."
-  },
-  "resources": {
-    "event": "/webmcp/event.json",
-    "tools": "/webmcp/tools.json"
-  }
-}
-```
-
-**Tool catalog entry** (`sesh/public/webmcp/tools.json`):
-
-```json
-{
-  "name": "sessions_search",
-  "readOnly": true,
-  "description": "Finds agenda sessions by text, speaker, room, theme, or time.",
-  "inputSchema": {
-    "type": "object",
-    "properties": {
-      "query": { "type": "string" },
-      "speaker": { "type": "string" },
-      "room": { "type": "string" },
-      "theme": { "type": "string" },
-      "time": { "type": "string" }
-    },
-    "additionalProperties": false
-  }
-}
-```
-
-**Tools:** `event_lookup`, `sessions_search`, `speakers_profile`, `agenda_explore`, `recommendations_list`, `event_brief`
-
-```bash
-cd sesh
-pnpm install
-pnpm dev
-```
-
-```bash
-pnpm lint
-pnpm build
-```
-
-→ [sesh/README.md](./sesh/README.md)
-
----
 
 ## Event details
 
