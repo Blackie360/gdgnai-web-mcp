@@ -1,8 +1,3 @@
-/**
- * Copyright 2026 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-
 const agentToggle = document.getElementById('agent-toggle');
 const agentChat = document.getElementById('agent-chat');
 const agentChatWindow = document.getElementById('agent-chat-window');

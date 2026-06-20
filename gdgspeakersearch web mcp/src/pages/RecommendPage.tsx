@@ -1,8 +1,3 @@
-/**
- * Copyright 2026 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { useEffect, useMemo } from 'react'
 import InterestPicker from '../components/InterestPicker'
 import SessionCard from '../components/SessionCard'

@@ -108,4 +108,4 @@ npm run preview
 
 ## License
 
-Includes Google LLC copyright headers (Apache-2.0), adapted from the [Chrome Labs flight search demo](https://googlechromelabs.github.io/webmcp-tools/demos/react-flightsearch/).
+Apache-2.0. Adapted from the [Chrome Labs flight search demo](https://googlechromelabs.github.io/webmcp-tools/demos/react-flightsearch/).

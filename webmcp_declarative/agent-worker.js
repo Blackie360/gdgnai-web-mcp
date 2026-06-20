@@ -1,8 +1,3 @@
-/**
- * Copyright 2026 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { GoogleGenAI } from 'https://esm.sh/@google/genai';
 
 let ai, chat;

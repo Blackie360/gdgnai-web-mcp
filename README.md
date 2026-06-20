@@ -214,4 +214,4 @@ npm run dev
 
 ## License
 
-Demo code in `gdgspeakersearch web mcp/` includes Google LLC copyright headers (Apache-2.0). See subfolder READMEs for other project details.
+Demo code in `gdgspeakersearch web mcp/` is licensed under Apache-2.0. See subfolder READMEs for other project details.

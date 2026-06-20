@@ -1,8 +1,3 @@
-/**
- * Copyright 2026 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { Link } from 'react-router-dom'
 import EventHero from '../components/EventHero'
 import SpeakerCard from '../components/SpeakerCard'

@@ -1126,6 +1126,12 @@ code, pre { font-family: var(--font-mono); font-size: 0.9em; }
   border-top: 1px solid var(--border);
 }
 
+.bl-foot a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* ── Responsive ──────────────────────────────────────── */
 
 @media (max-width: 900px) {

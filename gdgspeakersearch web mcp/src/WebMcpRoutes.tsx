@@ -1,8 +1,3 @@
-/**
- * Copyright 2026 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { useEffect } from 'react'
 import { useNavigate, Routes, Route, useSearchParams } from 'react-router-dom'
 import type { AgentAction } from './context/AgentUiContext'
