@@ -4,6 +4,8 @@ Hands-on demos for **Google I/O Extended Nairobi 2026** — showing how websites
 
 Built for the GDG Nairobi community around Gemini, Antigravity, Android 17, Firebase AI Studio, and agent-ready web development.
 
+**Repository:** [github.com/Blackie360/gdgnai-web-mcp](https://github.com/Blackie360/gdgnai-web-mcp)
+
 ![WebMCP flow: your site registers tools, modelContext exposes schemas, agents invoke with JSON](./docs/images/webmcp-flow.png)
 
 ## Live demos
@@ -22,10 +24,10 @@ Built for the GDG Nairobi community around Gemini, Antigravity, Android 17, Fire
 ## Repository layout
 
 ```
-gdgnai/
+gdgnai-web-mcp/
 ├── mcp-formlab/              # Blackie Labs — WebMCP explainer (vanilla HTML)
 ├── webmcp_declarative/       # AgentReady Content Studio — declarative forms
-├── gdgspeakersearch web mcp/ # GDG event site — imperative agent tools (React)
+├── gdgspeakersearch web mcp/ # GDG Event Guide — imperative agent tools (React)
 └── docs/images/              # README screenshots and diagrams
 ```
 
