@@ -979,6 +979,19 @@ code, pre { font-family: var(--font-mono); font-size: 0.9em; }
   box-shadow: 0 20px 48px -16px rgba(0, 0, 0, 0.5);
 }
 
+.bl-demo-card--source {
+  border-color: rgba(57, 198, 179, 0.25);
+  background: linear-gradient(145deg, var(--bg-card) 0%, rgba(57, 198, 179, 0.06) 100%);
+}
+
+.bl-demo-card--source:hover {
+  border-color: rgba(57, 198, 179, 0.55);
+}
+
+.bl-demo-card--source .bl-demo-go {
+  color: var(--teal);
+}
+
 .bl-demo-tag {
   font-size: 0.68rem;
   font-weight: 700;
